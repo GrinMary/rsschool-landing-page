@@ -22,9 +22,6 @@ h1 {
     line-height: 105%;
     color: #E1D4C9;
 }
-h1 span {
-    color: #B0907A;
-}
 h1.accent {
     font-style: italic;
 }
@@ -47,6 +44,13 @@ a {
     line-height: 150%;
     text-decoration: none;
     color: #403F3D;
+}
+.text-accent {
+    color: #B0907A;
+}
+.text-caption {
+    font-size: 10px;
+    line-height: 140%;
 }
 .button-primary {
     padding: 20px 78px;
@@ -166,4 +170,100 @@ nav ul li {
 .hero-info p {
     padding: 40px 0;
     color: #E1D4C9;
+}
+.favorite-coffee {
+    text-align: center;
+}
+.slider {
+    position: relative;
+}
+.slider-info {
+    max-width: 1152px;
+    margin: 0 auto;
+}
+.slider-item {
+    max-width: 480px;
+    margin: 0 auto;
+}
+.slider-сontrols button {
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    border: 1px #665F55 solid;
+    border-radius: 50%;
+    background-color: inherit;
+    cursor: pointer;
+}
+.slider-prev {
+    left: 0;
+}
+.slider-next {
+    right: 0;
+}
+.about-image {
+    display: flex;
+    gap: 16px;
+    /*max-height: 1060px;*/
+}
+.col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.col img {
+  max-width: 100%;
+  display: block;
+  border-radius: 20px;
+}
+.big {
+  aspect-ratio: 1 / 1; 
+  object-fit: cover;
+}
+.small {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+.mobile-app .container {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+.mobile-app-button {
+    margin-top: 40px;
+}
+.mobile-app-button button {
+    padding: 12px 40px 12px 64px;
+    border-radius: 100px;
+    border: 1px solid #665F55;
+    background-color: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+.mobile-app-button span {
+    display: block;
+}
+.btn-app-store {
+    background: url(./assets/png/app-store.png) 20px 8px no-repeat;
+}
+.btn-google-play {
+    background: url(./assets/png/google-play.png) 20px 8px no-repeat;
+}
+.footer-container {
+    display: flex;
+    background-color: #665F55;
+    border-radius: 40px;
+}
+.footer-info h2 {
+    color: #E1D4C9;
+}
+.socials-btn {
+    height: 60px;
+    width: 60px;
+    margin-right: 12px;
+    background-color: inherit;
+    border: 1px solid #C1B6AD;
+    border-radius: 100px; 
+    cursor: pointer;
 }
