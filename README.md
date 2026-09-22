@@ -1,1 +1,1 @@
-# rsschool-landing-page
+https://github.com/GrinMary/rsschool-landing-page/
