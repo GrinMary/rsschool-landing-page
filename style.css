@@ -13,6 +13,11 @@ body {
     background-color: #E1D4C9;
     color: #403F3D;
 }
+body.open-menu {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
 *{
     box-sizing: border-box;
 }
@@ -61,6 +66,7 @@ a:hover {
     line-height: 140%;
 }
 .button-primary {
+    display: inline-block;
     padding: 20px 78px;
     background-color: #E1D4C9;
     border-radius: 100px;
@@ -81,7 +87,6 @@ a:hover {
     padding-top: 20px;
 }
 .header-menu {
-    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -94,6 +99,21 @@ nav ul {
 nav ul li {
     list-style: none;
     margin: 0 20px;
+}
+.item-menu {
+    display: none;
+    position: relative;
+    padding-right: 30px;
+    margin-top: 50px;
+}
+.item-menu::after {
+    position: absolute;
+    content: "";
+    right: 0px;
+    bottom: 3px;
+    width: 20px;
+    height: 20px;
+    background: url("./assets/png/coffee-cup.png") no-repeat 50% 50%;
 }
 .switch {
     position: relative;
@@ -169,9 +189,11 @@ nav ul li {
 .burger-menu {
     display: none;
     position: absolute;
-    right: 0;
+    right: 40px;
     width: 40px;
     height: 40px;
+    border: 1px solid #665F55;
+    border-radius: 50%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -183,16 +205,17 @@ nav ul li {
     position: absolute;
     width: 20px;
     height: 1px;
+    left: 25%;
     margin: 4px 0;
     background-color: #181C29;
     list-style: none;
     transition: 0.3s ease;
 }
 .burger-menu::before {
-    top: 10px;
+    top: 9px;
 }
 .burger-menu::after {
-    bottom: 10px;
+    bottom: 9px;
 }
 .burger-menu.active::before {
     transform: rotate(45deg) translate(3px, 3px);
@@ -216,10 +239,6 @@ nav ul li {
 .hero-info p {
     padding: 40px 0;
     color: #E1D4C9;
-}
-.button-primary{
-    display: inline-block;
-    position: relative;
 }
 .button-primary::after {
     position: absolute;
@@ -367,6 +386,13 @@ nav ul li {
     .coffee-menu {
         padding: 0 0 0 10px;
     }
+    .mobile-app .container {
+        flex-direction: column;
+    }
+    .footer-container-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 @media (max-width: 768px) {
     .burger-menu {
@@ -375,7 +401,7 @@ nav ul li {
     .header-action {
         margin-right: 55px;
     }
-    nav ul {
+    .nav-list {
         position: absolute;
         left: 0;
         flex-direction: column;
@@ -385,16 +411,23 @@ nav ul li {
         width: 100%;
         background-color: #E1D4C9;
         margin: 0 auto;
-        
+        transform: translateX(768px); 
+        transition: transform 0.5s ease;
+    }
+    .nav-list.active {
+        transform: translateX(0);  
+        transition: transform 0.5s ease ;
     }
     nav ul li {
-        margin: 30px 0;
+        margin: 25px 0;
+    }
+    .item-menu {
+        display: block;
     }
     .coffee-menu {
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        z-index: 5;
-        padding: 0;
+        display: none;
+    }
+    .col .small {
+        display: none;
     }
 }   
